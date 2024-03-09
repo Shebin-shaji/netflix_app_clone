@@ -8,5 +8,10 @@ class ImageConstants {
   static const String box2 = "assets/images/box2.png";
   static const String box3 = "assets/images/box3.png";
   static const String box4 = "assets/images/box4.png";
-  static const String add_profile_icon = "assets/images/add_profile_icon.png";
+  static const String addProfileIcon = "assets/images/add_profile_icon.png";
+
+  //home page
+
+  static const String netflixAppIcon = "assets/images/netflix_icon.png";
+  static const String homePageBackground = "assets/images/home_page_background.png";
 }
