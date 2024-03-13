@@ -13,5 +13,13 @@ class ImageConstants {
   //home page
 
   static const String netflixAppIcon = "assets/images/netflix_icon.png";
-  static const String homePageBackground = "assets/images/home_page_background.png";
+  static const String homePageBackground =
+      "assets/images/home_page_background.png";
+
+  //coming soon screen
+
+  static const String newArrivalmovie1 = "assets/images/Newarrival1.png";
+  static const String newArrivalmovie2 = "assets/images/NewArrival2.png";
+
+  static const String notification1 = "assets/images/notification1.png";
 }

@@ -4,19 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:netflix_app_clone/dummy_db.dart';
 
 class PreviewCircleAvatarWidget extends StatelessWidget {
-  const PreviewCircleAvatarWidget({super.key});
-
+  const PreviewCircleAvatarWidget({
+    super.key,
+    required this.index,
+  });
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 102,
       width: 102,
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
-      ),
-      child: CircleAvatar(
-          backgroundImage: NetworkImage(
-              "https://www.digitaltrends.com/wp-content/uploads/2023/11/blQaj6biyBMLo34cuFKKwbgjIBz.jpg?p=1#038;p=1.jpg")),
+          shape: BoxShape.circle,
+          
+          image: DecorationImage(
+            fit: BoxFit.fill,
+              image: NetworkImage(DummyDb.previewListImages[index]))),
     );
   }
 }

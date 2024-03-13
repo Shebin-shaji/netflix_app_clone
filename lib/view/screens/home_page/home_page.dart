@@ -7,9 +7,11 @@ import 'package:flutter/widgets.dart';
 import 'package:netflix_app_clone/core/constants/color_constants.dart';
 import 'package:netflix_app_clone/core/constants/image_constants.dart';
 import 'package:netflix_app_clone/dummy_db.dart';
+import 'package:netflix_app_clone/global_widgets/continue_watching_container_widget.dart';
 
 import 'package:netflix_app_clone/global_widgets/heading_text.dart';
 import 'package:netflix_app_clone/global_widgets/list_play_info_bar.dart';
+import 'package:netflix_app_clone/global_widgets/movie_list_container_widget.dart';
 import 'package:netflix_app_clone/global_widgets/previews_circle_avatar_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -46,10 +48,12 @@ class HomePage extends StatelessWidget {
                       ),
                       Text("TV Shows",
                           style: TextStyle(
-                              color: ColorConstants.primaryWhite, fontSize: 22)),
+                              color: ColorConstants.primaryWhite,
+                              fontSize: 22)),
                       Text("Movies",
                           style: TextStyle(
-                              color: ColorConstants.primaryWhite, fontSize: 22)),
+                              color: ColorConstants.primaryWhite,
+                              fontSize: 22)),
                       Text("My List",
                           style: TextStyle(
                               color: const Color.fromRGBO(255, 255, 255, 1),
@@ -66,8 +70,8 @@ class HomePage extends StatelessWidget {
                           width: 15,
                           height: 15,
                           decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: ColorConstants.primaryWhite)),
+                              border: Border.all(
+                                  color: ColorConstants.primaryWhite)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -107,46 +111,217 @@ class HomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-              
-               //preview list
-              
+
+                //preview movies list
+
                 children: [
-                  HeadingText(text: "Previews"),
+                  HeadingText(
+                    text: "Previews",
+                    fontSize: 25,
+                  ),
+                  SizedBox(
+                    
+                    width: double.
+                    infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            PreviewCircleAvatarWidget(
+                              index: index,
+                            ),
+                            separatorBuilder: (context, index) => SizedBox(width: 10),
+                        itemCount: DummyDb.previewListImages.length),
+                  ),
+
+                  HeadingText(text: "Continue watching Emerald", fontSize: 22),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 130,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            ContinueWatchingContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
+
+                  //trending now movie list
+
+                  SizedBox(height: 8),
+                  HeadingText(text: "Popular On Netflix", fontSize: 20),
+                  SizedBox(height: 8),
                   SizedBox(
                     width: double.infinity,
                     height: 120,
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            PreviewCircleAvatarWidget(),
+                            MovieListContainerWidget(),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
                         itemCount: 6),
                   ),
-                  HeadingText(text: "Continue watching Emerald"),
+                  SizedBox(height: 8),
+                  HeadingText(text: "Trending Now", fontSize: 20),
+                  SizedBox(height: 8),
                   SizedBox(
                     width: double.infinity,
                     height: 120,
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            PreviewCircleAvatarWidget(),
+                            MovieListContainerWidget(),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
                         itemCount: 6),
                   ),
-                  
+                  SizedBox(height: 8),
+                  HeadingText(text: "Top 10 in Nigeria Today", fontSize: 20),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            MovieListContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
+                  SizedBox(height: 8),
+                  HeadingText(text: "My List", fontSize: 20),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            MovieListContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
+                  SizedBox(height: 8),
+                  HeadingText(text: "African Movies", fontSize: 20),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            MovieListContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
+                  SizedBox(height: 8),
+                  HeadingText(text: "Mollywood Movies And TV", fontSize: 20),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            MovieListContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
+                  SizedBox(height: 8),
+                  HeadingText(text: "Netflix Originals", fontSize: 20),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            MovieListContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
+                  SizedBox(height: 20),
+                  HeadingText(text: "Watch it again", fontSize: 20),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            MovieListContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
+                  SizedBox(height: 8),
+                  HeadingText(text: "New Releases", fontSize: 20),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            MovieListContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
+                  SizedBox(height: 8),
+                  HeadingText(text: "TV Thrillers and Mysteries", fontSize: 20),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            MovieListContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
+                  SizedBox(height: 8),
+                  HeadingText(text: "US TV Shows", fontSize: 20),
+                  SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            MovieListContainerWidget(),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 8,
+                            ),
+                        itemCount: 6),
+                  ),
                 ],
-                
               ),
             ),
-             
           ],
         ),
       ),
-      
     );
   }
 }
