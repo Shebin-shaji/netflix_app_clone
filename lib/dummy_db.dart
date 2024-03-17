@@ -1,13 +1,35 @@
 class DummyDb {
-  //home page preview list
-  
-  static const List<dynamic> previewListImages = [
-    
-        "https://www.digitaltrends.com/wp-content/uploads/2023/11/blQaj6biyBMLo34cuFKKwbgjIBz.jpg?p=1#038;p=1.jpg",
-        "https://www.digitaltrends.com/wp-content/uploads/2022/04/6ms0qel7uk2gdffbhfnwuylsq4h.jpg",
-        "https://m.media-amazon.com/images/M/MV5BZWU3NjUyODMtNGFlNS00MDg5LWJkNDYtNzc3MzFmZWI5ZjMyXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_FMjpg_UX1000_.jpg",
-        "https://media1.popsugar-assets.com/files/thumbor/d0PiFMVXeVjdBZGtVAvDwOICiXY=/fit-in/792x990/filters:format_auto():upscale()/2023/04/28/965/n/1922283/1b097988a2ba76e7_MCDWEAT_ZX001.jpg"
+  // accounts list
+
+  static const List<Map> accountList = [
+    {"text": "Shebin", "image": "assets/images/box1.png"},
+    {"text": "Brijith", "image": "assets/images/box2.png"},
+    {"text": "Albi", "image": "assets/images/box3.png"},
+    {"text": "Lijo", "image": "assets/images/box4.png"},
+    {"text": "Add profile", "image": "assets/images/add_profile_icon.png"},
   ];
+
+  //home page preview list
+
+  static const List<dynamic> previewListImages = [
+    "https://lh3.googleusercontent.com/proxy/QxcWJ5Jcsaiezrhkf3blfOTpgJmXbe8hmApdeCybw9aVvwgOll2wV4tq3EkKCC2txhEtkOPsnzWo5zHWvM_0WNFGAWmHTHEP9myExl7myY3fVo9hpkooCMZz5E640yAtqVvo0pw",
+    "https://www.digitaltrends.com/wp-content/uploads/2022/04/6ms0qel7uk2gdffbhfnwuylsq4h.jpg",
+    "https://pbs.twimg.com/media/FH8AJ_eUYAADCKd.jpg",
+    "https://media1.popsugar-assets.com/files/thumbor/d0PiFMVXeVjdBZGtVAvDwOICiXY=/fit-in/792x990/filters:format_auto():upscale()/2023/04/28/965/n/1922283/1b097988a2ba76e7_MCDWEAT_ZX001.jpg"
+  ];
+
+  //film backgrounds list for movieListContainerwidget
+
+  static const List<dynamic> filmList = [
+    "https://m.media-amazon.com/images/I/91GONzCyOcL.jpg",
+    "https://m.media-amazon.com/images/I/91zTlD7AY1L._AC_UF1000,1000_QL80_.jpg",
+    "https://bollywoodmovieposters.com/wp-content/uploads/2023/01/pathan-poster-shahrukh-khan-movie-srk.jpg",
+    "https://lh3.googleusercontent.com/proxy/QxcWJ5Jcsaiezrhkf3blfOTpgJmXbe8hmApdeCybw9aVvwgOll2wV4tq3EkKCC2txhEtkOPsnzWo5zHWvM_0WNFGAWmHTHEP9myExl7myY3fVo9hpkooCMZz5E640yAtqVvo0pw",
+    "https://www.digitaltrends.com/wp-content/uploads/2022/04/6ms0qel7uk2gdffbhfnwuylsq4h.jpg",
+    "https://pbs.twimg.com/media/FH8AJ_eUYAADCKd.jpg",
+    "https://media1.popsugar-assets.com/files/thumbor/d0PiFMVXeVjdBZGtVAvDwOICiXY=/fit-in/792x990/filters:format_auto():upscale()/2023/04/28/965/n/1922283/1b097988a2ba76e7_MCDWEAT_ZX001.jpg"
+  ];
+
   // search screen data
 
   static const List<Map> searchList = [
@@ -55,6 +77,38 @@ class DummyDb {
       "filmName": "JOKER",
       "filmBackground":
           "https://cdna.artstation.com/p/assets/images/images/017/022/542/large/amirhosein-naseri-desktop-screenshot-2019-04-03-18-17-47-11.jpg?1554338571"
+    },
+  ];
+
+  // new arrival movie list in comingsoon screen
+  static const List<Map> newArrivallist = [
+    {
+      "movieName": "El Chapo",
+      "movieBackground": "assets/images/Newarrival1.png"
+    },
+    {
+      "movieName": "Peaky Blinders",
+      "movieBackground": "assets/images/NewArrival2.png"
+    },
+  ];
+
+  // notification movie list in comingsoon screen
+
+  static const List<Map> notificationMovieList = [
+    {
+      "movieName": "X-Men",
+      "movieBackground":
+          "https://wegeekgirls.files.wordpress.com/2016/04/x-men_apocalypse_character-poster2.jpg?w=1200"
+    },
+    {
+      "movieName": "Fast And Furious",
+      "movieBackground":
+          "https://rukminim2.flixcart.com/image/850/1000/l2z26q80/poster/4/r/k/small-yaa-fast-furious-cool-art-effect-movie-poster-original-image72hwzkpexdg.jpeg?q=20&crop=false"
+    },
+    {
+      "movieName": "Fields of Destiny",
+      "movieBackground":
+          "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1700795880/catalog/1600659718750367744/xiry6ufbjttckqxpfzrw.jpg"
     },
   ];
 }

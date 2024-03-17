@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:netflix_app_clone/core/constants/color_constants.dart';
 
 class ContinueWatchingContainerWidget extends StatelessWidget {
-  const ContinueWatchingContainerWidget({super.key});
+  const ContinueWatchingContainerWidget({super.key, required this.index});
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,6 @@ class ContinueWatchingContainerWidget extends StatelessWidget {
             width: 103,
             color: Color(0xFF121212),
             child: Row(
-           
               children: [
                 SizedBox(width: 8),
                 Icon(

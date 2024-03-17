@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:netflix_app_clone/core/constants/color_constants.dart';
 import 'package:netflix_app_clone/core/constants/image_constants.dart';
 import 'package:netflix_app_clone/dummy_db.dart';
@@ -13,10 +11,12 @@ import 'package:netflix_app_clone/global_widgets/heading_text.dart';
 import 'package:netflix_app_clone/global_widgets/list_play_info_bar.dart';
 import 'package:netflix_app_clone/global_widgets/movie_list_container_widget.dart';
 import 'package:netflix_app_clone/global_widgets/previews_circle_avatar_widget.dart';
+import 'package:netflix_app_clone/view/screens/home_page/my_list_Page/my_list_page.dart';
+import 'package:netflix_app_clone/view/screens/home_page/widgets/appbar_text.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,18 +46,16 @@ class HomePage extends StatelessWidget {
                       Image.asset(
                         ImageConstants.netflixAppIcon,
                       ),
-                      Text("TV Shows",
-                          style: TextStyle(
-                              color: ColorConstants.primaryWhite,
-                              fontSize: 22)),
-                      Text("Movies",
-                          style: TextStyle(
-                              color: ColorConstants.primaryWhite,
-                              fontSize: 22)),
-                      Text("My List",
-                          style: TextStyle(
-                              color: const Color.fromRGBO(255, 255, 255, 1),
-                              fontSize: 22)),
+                      AppBarText(text: "TV Shows"),
+                      AppBarText(text: "Movies"),
+                      InkWell(
+                        child: AppBarText(text: "My List"),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MyListPage(),
+                            )),
+                      ),
                     ],
                   ),
                 ),
@@ -120,9 +118,7 @@ class HomePage extends StatelessWidget {
                     fontSize: 25,
                   ),
                   SizedBox(
-                    
-                    width: double.
-                    infinity,
+                    width: double.infinity,
                     height: 120,
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
@@ -130,7 +126,8 @@ class HomePage extends StatelessWidget {
                             PreviewCircleAvatarWidget(
                               index: index,
                             ),
-                            separatorBuilder: (context, index) => SizedBox(width: 10),
+                        separatorBuilder: (context, index) =>
+                            SizedBox(width: 10),
                         itemCount: DummyDb.previewListImages.length),
                   ),
 
@@ -142,11 +139,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            ContinueWatchingContainerWidget(),
+                            ContinueWatchingContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
 
                   //trending now movie list
@@ -160,11 +157,13 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(
+                              index: index,
+                            ),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 8),
                   HeadingText(text: "Trending Now", fontSize: 20),
@@ -175,11 +174,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 8),
                   HeadingText(text: "Top 10 in Nigeria Today", fontSize: 20),
@@ -190,11 +189,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 8),
                   HeadingText(text: "My List", fontSize: 20),
@@ -205,11 +204,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 8),
                   HeadingText(text: "African Movies", fontSize: 20),
@@ -220,11 +219,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 8),
                   HeadingText(text: "Mollywood Movies And TV", fontSize: 20),
@@ -235,11 +234,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 8),
                   HeadingText(text: "Netflix Originals", fontSize: 20),
@@ -250,11 +249,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 20),
                   HeadingText(text: "Watch it again", fontSize: 20),
@@ -265,11 +264,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 8),
                   HeadingText(text: "New Releases", fontSize: 20),
@@ -280,11 +279,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 8),
                   HeadingText(text: "TV Thrillers and Mysteries", fontSize: 20),
@@ -295,11 +294,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                   SizedBox(height: 8),
                   HeadingText(text: "US TV Shows", fontSize: 20),
@@ -310,11 +309,11 @@ class HomePage extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            MovieListContainerWidget(),
+                            MovieListContainerWidget(index: index),
                         separatorBuilder: (context, index) => SizedBox(
                               width: 8,
                             ),
-                        itemCount: 6),
+                        itemCount: DummyDb.filmList.length),
                   ),
                 ],
               ),

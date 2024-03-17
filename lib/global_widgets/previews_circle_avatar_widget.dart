@@ -18,7 +18,7 @@ class PreviewCircleAvatarWidget extends StatelessWidget {
           shape: BoxShape.circle,
           
           image: DecorationImage(
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
               image: NetworkImage(DummyDb.previewListImages[index]))),
     );
   }

@@ -7,26 +7,31 @@ import 'package:netflix_app_clone/global_widgets/heading_text.dart';
 import 'package:netflix_app_clone/view/screens/coming_soon_screen/widgets/dot_icon.dart';
 
 class NotificationMovieDetails extends StatelessWidget {
-  const NotificationMovieDetails({super.key});
+  const NotificationMovieDetails(
+      {super.key, required this.movieName, required this.movieBackground});
+
+  final String movieName;
+  final String movieBackground;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 460,
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-              height: 195,
-              width: double.infinity,
-              child: Image(
-                  fit: BoxFit.cover,
+          SizedBox(
+            child: SizedBox(
+                height: 195,
+                width: double.infinity,
+                child: Image(
+                    fit: BoxFit.cover,
 
-                  //movie poster
-                  
-                  image: NetworkImage(
-                      "https://www.webfx.com/wp-content/uploads/2021/10/DI_dark_castle_preview.jpg"))),
+                    //movie poster
+
+                    image: NetworkImage(movieBackground))),
+          ),
           SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -64,7 +69,7 @@ class NotificationMovieDetails extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -76,13 +81,14 @@ class NotificationMovieDetails extends StatelessWidget {
 
                 //movie name
 
-                HeadingText(text: "Castle and Castle", fontSize: 25),
+                HeadingText(text: movieName, fontSize: 25),
                 SizedBox(height: 12),
 
                 //movie description
 
                 Text(
                     "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+                    maxLines: 3,
                     style: TextStyle(
                       color: ColorConstants.descriptionTextColor,
                     )),

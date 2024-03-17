@@ -39,6 +39,8 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
             currentIndex: selectedIndex,
             backgroundColor: Color(0xFF121212),
             items: [
+              //navigates to homepage
+
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
@@ -46,6 +48,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                 ),
                 label: "Home",
               ),
+
+              //navigates to search page
+
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.search,
@@ -53,6 +58,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                 ),
                 label: "Search",
               ),
+
+              //navigates to coming soon page
+
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.upcoming_outlined,
@@ -60,6 +68,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                 ),
                 label: "Coming Soon",
               ),
+
+              //navigates to downloads page
+
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.download,
@@ -67,6 +78,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                 ),
                 label: "Downloads",
               ),
+
+              //navigates to more page
+
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.menu,
