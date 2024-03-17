@@ -9,10 +9,18 @@ class DummyDb {
     {"text": "Add profile", "image": "assets/images/add_profile_icon.png"},
   ];
 
+  static const List<Map> accountList2 = [
+    {"text": "Shebin", "image": "assets/images/box1.png"},
+    {"text": "Brijith", "image": "assets/images/box2.png"},
+    {"text": "Albi", "image": "assets/images/box3.png"},
+    {"text": "Lijo", "image": "assets/images/box4.png"},
+    {"text": "", "image": "assets/images/add_profile_icon.png"},
+  ];
+
   //home page preview list
 
   static const List<dynamic> previewListImages = [
-    "https://lh3.googleusercontent.com/proxy/QxcWJ5Jcsaiezrhkf3blfOTpgJmXbe8hmApdeCybw9aVvwgOll2wV4tq3EkKCC2txhEtkOPsnzWo5zHWvM_0WNFGAWmHTHEP9myExl7myY3fVo9hpkooCMZz5E640yAtqVvo0pw",
+    "https://static01.nyt.com/images/2017/09/15/arts/24movie-posters8/24movie-posters8-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
     "https://www.digitaltrends.com/wp-content/uploads/2022/04/6ms0qel7uk2gdffbhfnwuylsq4h.jpg",
     "https://pbs.twimg.com/media/FH8AJ_eUYAADCKd.jpg",
     "https://media1.popsugar-assets.com/files/thumbor/d0PiFMVXeVjdBZGtVAvDwOICiXY=/fit-in/792x990/filters:format_auto():upscale()/2023/04/28/965/n/1922283/1b097988a2ba76e7_MCDWEAT_ZX001.jpg"
@@ -24,7 +32,7 @@ class DummyDb {
     "https://m.media-amazon.com/images/I/91GONzCyOcL.jpg",
     "https://m.media-amazon.com/images/I/91zTlD7AY1L._AC_UF1000,1000_QL80_.jpg",
     "https://bollywoodmovieposters.com/wp-content/uploads/2023/01/pathan-poster-shahrukh-khan-movie-srk.jpg",
-    "https://lh3.googleusercontent.com/proxy/QxcWJ5Jcsaiezrhkf3blfOTpgJmXbe8hmApdeCybw9aVvwgOll2wV4tq3EkKCC2txhEtkOPsnzWo5zHWvM_0WNFGAWmHTHEP9myExl7myY3fVo9hpkooCMZz5E640yAtqVvo0pw",
+    "https://imgc.allpostersimages.com/img/posters/e-t-the-extra-terrestrial-1982-directed-by-steven-spielberg_u-L-Q1RLWIK0.jpg",
     "https://www.digitaltrends.com/wp-content/uploads/2022/04/6ms0qel7uk2gdffbhfnwuylsq4h.jpg",
     "https://pbs.twimg.com/media/FH8AJ_eUYAADCKd.jpg",
     "https://media1.popsugar-assets.com/files/thumbor/d0PiFMVXeVjdBZGtVAvDwOICiXY=/fit-in/792x990/filters:format_auto():upscale()/2023/04/28/965/n/1922283/1b097988a2ba76e7_MCDWEAT_ZX001.jpg"

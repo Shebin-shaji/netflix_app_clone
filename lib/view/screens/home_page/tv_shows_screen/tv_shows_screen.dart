@@ -10,13 +10,11 @@ import 'package:netflix_app_clone/global_widgets/heading_text.dart';
 import 'package:netflix_app_clone/global_widgets/list_play_info_bar.dart';
 import 'package:netflix_app_clone/global_widgets/movie_list_container_widget.dart';
 import 'package:netflix_app_clone/global_widgets/previews_circle_avatar_widget.dart';
-import 'package:netflix_app_clone/view/screens/home_page/movies_page/movies_page.dart';
-import 'package:netflix_app_clone/view/screens/home_page/my_list_Page/my_list_page.dart';
-import 'package:netflix_app_clone/view/screens/home_page/tv_shows_screen/tv_shows_screen.dart';
+
 import 'package:netflix_app_clone/view/screens/home_page/widgets/appbar_text.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class TvShowsPage extends StatelessWidget {
+  const TvShowsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +31,7 @@ class HomePage extends StatelessWidget {
                   height: 415,
                   width: 424.05,
                   child: Image.asset(
-                    ImageConstants.homePageBackground,
+                    ImageConstants.PagesBackground,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -47,28 +45,27 @@ class HomePage extends StatelessWidget {
                       Image.asset(
                         ImageConstants.netflixAppIcon,
                       ),
-                      InkWell(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => TvShowsPage(),
-                              )),
-                          child: AppBarText(text: "TV Shows")),
-                      InkWell(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => MoviesPage(),
-                              )),
-                          child: AppBarText(text: "Movies")),
-                      InkWell(
-                        child: AppBarText(text: "My List"),
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MyListPage(),
-                            )),
+                      Row(
+                        children: [
+                          AppBarText(text: "TV Shows"),
+                          Icon(
+                            Icons.arrow_drop_down,
+                            color: ColorConstants.primaryWhite,
+                            size: 29,
+                          )
+                        ],
                       ),
+                      Row(
+                        children: [
+                          AppBarText(text: "All Genre"),
+                          Icon(
+                            Icons.arrow_drop_down,
+                            color: ColorConstants.primaryWhite,
+                            size: 29,
+                          )
+                        ],
+                      ),
+                      SizedBox(width: 20)
                     ],
                   ),
                 ),
