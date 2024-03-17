@@ -11,8 +11,10 @@ class MovieListContainerWidget extends StatelessWidget {
       width: 103,
       decoration: const BoxDecoration(
           image: DecorationImage(
+            fit:BoxFit.cover ,
               image: NetworkImage(
-                  "https://assets-global.website-files.com/630d4d1c4a462569dd189855/64c19105282a4f4d3e2ba884_2c130933-15f5-4898-a6d6-3d5180b7c2e8%201.webp"))),
+                
+                  "https://blog.chasejarvis.com/blog/wp-content/uploads/2013/02/ChaseJarvis_Lincoln-620x918.jpg"))),
     );
   }
 }
