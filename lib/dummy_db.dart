@@ -9,14 +9,6 @@ class DummyDb {
     {"text": "Add profile", "image": "assets/images/add_profile_icon.png"},
   ];
 
-  static const List<Map> accountList2 = [
-    {"text": "Shebin", "image": "assets/images/box1.png"},
-    {"text": "Brijith", "image": "assets/images/box2.png"},
-    {"text": "Albi", "image": "assets/images/box3.png"},
-    {"text": "Lijo", "image": "assets/images/box4.png"},
-    {"text": "", "image": "assets/images/add_profile_icon.png"},
-  ];
-
   //home page preview list
 
   static const List<dynamic> previewListImages = [
@@ -118,5 +110,14 @@ class DummyDb {
       "movieBackground":
           "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1700795880/catalog/1600659718750367744/xiry6ufbjttckqxpfzrw.jpg"
     },
+  ];
+ 
+ 
+  static const List<Map> accountList2 = [
+    {"text": "Shebin", "image": "assets/images/box1.png"},
+    {"text": "Brijith", "image": "assets/images/box2.png"},
+    {"text": "Albi", "image": "assets/images/box3.png"},
+    {"text": "Lijo", "image": "assets/images/box4.png"},
+    {"text": "", "image": "assets/images/add_profile_icon.png"},
   ];
 }

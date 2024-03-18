@@ -18,7 +18,6 @@ class ImageConstants {
       "assets/images/home_page_background.png";
   static const String PagesBackground =
       "assets/images/movie_page_background.png";
- 
 
   //coming soon screen
 
@@ -26,4 +25,10 @@ class ImageConstants {
   static const String newArrivalmovie2 = "assets/images/NewArrival2.png";
 
   static const String notification1 = "assets/images/notification1.png";
+
+  //more screen icons
+
+  static const String whatsappIcon = "assets/images/whatsapp_icon.png";
+  static const String facebookIcon = "assets/images/facebook_icon.png";
+  static const String gmailIcon = "assets/images/gmail_icon.png";
 }
