@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:netflix_app_clone/api/api.dart';
 
 import 'package:netflix_app_clone/core/constants/color_constants.dart';
 import 'package:netflix_app_clone/core/constants/image_constants.dart';
@@ -8,15 +9,29 @@ import 'package:netflix_app_clone/dummy_db.dart';
 import 'package:netflix_app_clone/global_widgets/continue_watching_container_widget.dart';
 import 'package:netflix_app_clone/global_widgets/heading_text.dart';
 import 'package:netflix_app_clone/global_widgets/list_play_info_bar.dart';
+import 'package:netflix_app_clone/global_widgets/movie_container_widget.dart';
 import 'package:netflix_app_clone/global_widgets/movie_list_container_widget.dart';
 import 'package:netflix_app_clone/global_widgets/previews_circle_avatar_widget.dart';
+import 'package:netflix_app_clone/model/movie_list.dart';
 import 'package:netflix_app_clone/view/screens/home_page/movies_page/movies_page.dart';
 import 'package:netflix_app_clone/view/screens/home_page/my_list_Page/my_list_page.dart';
 import 'package:netflix_app_clone/view/screens/home_page/tv_shows_screen/tv_shows_screen.dart';
 import 'package:netflix_app_clone/view/screens/home_page/widgets/appbar_text.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late Future<List<Movie>> trendingMovies;
+  @override
+  void initState() {
+    super.initState();
+    trendingMovies = Api().getTrendingMovies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -165,19 +180,24 @@ class HomePage extends StatelessWidget {
                   HeadingText(text: "Popular On Netflix", fontSize: 20),
                   SizedBox(height: 8),
                   SizedBox(
-                    width: double.infinity,
-                    height: 120,
-                    child: ListView.separated(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) =>
-                            MovieListContainerWidget(
-                              index: index,
-                            ),
-                        separatorBuilder: (context, index) => SizedBox(
-                              width: 8,
-                            ),
-                        itemCount: DummyDb.filmList.length),
+                    child: FutureBuilder(
+                      future: trendingMovies,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasError) {
+                          return Center(
+                            child: Text(snapshot.error.toString()),
+                          );
+                        } else if (snapshot.hasData) {
+                          return MovieContainerWidget(snapshot: snapshot,);
+                        } else {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                      },
+                    ),
                   ),
+
                   SizedBox(height: 8),
                   HeadingText(text: "Trending Now", fontSize: 20),
                   SizedBox(height: 8),

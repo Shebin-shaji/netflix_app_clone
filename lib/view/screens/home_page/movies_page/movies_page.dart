@@ -10,8 +10,6 @@ import 'package:netflix_app_clone/global_widgets/heading_text.dart';
 import 'package:netflix_app_clone/global_widgets/list_play_info_bar.dart';
 import 'package:netflix_app_clone/global_widgets/movie_list_container_widget.dart';
 import 'package:netflix_app_clone/global_widgets/previews_circle_avatar_widget.dart';
-import 'package:netflix_app_clone/view/screens/bottom_navbar_screen/bottom_navbar_screen.dart';
-
 import 'package:netflix_app_clone/view/screens/home_page/widgets/appbar_text.dart';
 
 class MoviesPage extends StatelessWidget {

@@ -96,14 +96,14 @@ class DummyDb {
 
   static const List<Map> notificationMovieList = [
     {
-      "movieName": "X-Men",
+      "movieName": "Leo",
       "movieBackground":
-          "https://wegeekgirls.files.wordpress.com/2016/04/x-men_apocalypse_character-poster2.jpg?w=1200"
+          "https://m.media-amazon.com/images/M/MV5BZjU2ODJjOWUtMzlmYS00MWUyLWI5ZjgtYjYyMjc1NmJjNDU3XkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_QL75_UX500_CR0,0,500,281_.jpg"
     },
     {
-      "movieName": "Fast And Furious",
+      "movieName": "Bholaa",
       "movieBackground":
-          "https://rukminim2.flixcart.com/image/850/1000/l2z26q80/poster/4/r/k/small-yaa-fast-furious-cool-art-effect-movie-poster-original-image72hwzkpexdg.jpeg?q=20&crop=false"
+          "https://thepopcornuniverse.in/wp-content/uploads/2023/03/Bholaa_Poster_Landscape.jpg"
     },
     {
       "movieName": "Fields of Destiny",
@@ -111,8 +111,7 @@ class DummyDb {
           "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1700795880/catalog/1600659718750367744/xiry6ufbjttckqxpfzrw.jpg"
     },
   ];
- 
- 
+
   static const List<Map> accountList2 = [
     {"text": "Shebin", "image": "assets/images/box1.png"},
     {"text": "Brijith", "image": "assets/images/box2.png"},

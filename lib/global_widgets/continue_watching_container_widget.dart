@@ -16,7 +16,7 @@ class ContinueWatchingContainerWidget extends StatelessWidget {
           width: 103,
           child: Image(
               image: NetworkImage(
-                  "https://stat4.bollywoodhungama.in/wp-content/uploads/2024/01/The-Beekeeper-English-306x393.jpg")),
+                  "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1700795880/catalog/1600659718750367744/xiry6ufbjttckqxpfzrw.jpg")),
         ),
         Positioned(
           bottom: 0,

@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:netflix_app_clone/core/constants/color_constants.dart';
 import 'package:netflix_app_clone/core/constants/image_constants.dart';
 import 'package:netflix_app_clone/dummy_db.dart';

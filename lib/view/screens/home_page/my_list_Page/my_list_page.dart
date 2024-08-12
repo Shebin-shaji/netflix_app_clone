@@ -9,7 +9,7 @@ import 'package:netflix_app_clone/dummy_db.dart';
 import 'package:netflix_app_clone/view/screens/home_page/widgets/appbar_text.dart';
 
 class MyListPage extends StatelessWidget {
-  MyListPage({super.key});
+  const MyListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
