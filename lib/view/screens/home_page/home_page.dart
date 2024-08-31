@@ -188,10 +188,12 @@ class _HomePageState extends State<HomePage> {
                             child: Text(snapshot.error.toString()),
                           );
                         } else if (snapshot.hasData) {
-                          return MovieContainerWidget(snapshot: snapshot,);
+                          return MovieContainerWidget(
+                            snapshot: snapshot,
+                          );
                         } else {
                           return Center(
-                            child: CircularProgressIndicator(),
+                            child: Text(snapshot.error.toString()),
                           );
                         }
                       },
